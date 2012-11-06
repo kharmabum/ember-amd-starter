@@ -8,3 +8,6 @@ ember-amd-starter
 ✓ Requirejs  
 ✓ Grunt  
 ✓ Jasmine  
+  
+(=^_^=)  
+
