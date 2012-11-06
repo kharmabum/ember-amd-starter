@@ -9,5 +9,9 @@ ember-amd-starter
 ✓ Grunt  
 ✓ Jasmine  
   
-(=^_^=)  
+    # cd ember-amd-starter
+    # grunt
+    # cd public-build
+    # python -m SimpleHTTPServer 8000
+    # (=^_^=)  
 
