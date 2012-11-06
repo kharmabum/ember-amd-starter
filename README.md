@@ -1,10 +1,10 @@
 ember-amd-starter
 =================
 
-✓ jQuery
-✓ Bootstrap
-✓ Handlebars
-✓ Ember
-✓ Requirejs
-✓ Grunt
-✓ Jasmine
+✓ jQuery  
+✓ Bootstrap  
+✓ Handlebars  
+✓ Ember  
+✓ Requirejs  
+✓ Grunt  
+✓ Jasmine  
