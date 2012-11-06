@@ -53,7 +53,7 @@ module.exports = function(grunt) {
 
       locale: "en_us",
       modules: [{
-          name: "SyndicationReporting"
+          name: "App"
       }]
     }
   });
