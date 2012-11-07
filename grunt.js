@@ -11,7 +11,12 @@ module.exports = function(grunt) {
       }
     },
     jasmine: {
-      all: ['test/SpecRunner.html']
+      amd: true,
+      specs: 'test/spec/**/*.js',
+      helpers: [
+        'public-build/js/lib/require.js',
+        'public-build/js/App.js'
+      ]
     },
     requirejs: {
       appDir: "public",
@@ -63,7 +68,7 @@ module.exports = function(grunt) {
 
   // Default task.
   grunt.registerTask('default', 'lint requirejs jasmine');
-  grunt.loadNpmTasks('grunt-jasmine-task');
+  grunt.loadNpmTasks('grunt-jasmine-runner');
   grunt.loadNpmTasks('grunt-requirejs');
 
 };

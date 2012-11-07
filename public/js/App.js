@@ -35,7 +35,7 @@ requirejs([
   'IndexView'
 ],
 function(Ember, Bootstrap, Router, ApplicationController, ApplicationView, IndexController, IndexView) {
-  var App = Ember.Application.create({
+  var App = window.App = Ember.Application.create({
     ApplicationController: ApplicationController,
     ApplicationView: ApplicationView,
 
@@ -44,4 +44,5 @@ function(Ember, Bootstrap, Router, ApplicationController, ApplicationView, Index
 
     Router: Router
   });
+  return App;
 });

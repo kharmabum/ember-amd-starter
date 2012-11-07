@@ -1,9 +1,11 @@
 define([
-  'ember'
+  'ember',
+  'LoadData'
 ],
-function(Ember) {
-  var IndexController = Ember.ObjectController.extend({
-    //beans
+function(Ember, LoadData) {
+  var IndexController = Ember.ArrayController.extend(LoadData, {
+    dataUrl: '/json/data.json',
+    dataKey: 'data'
   });
   return IndexController;
 });
