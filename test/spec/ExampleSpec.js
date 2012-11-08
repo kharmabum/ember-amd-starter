@@ -4,7 +4,6 @@ define([
   'hbs!template/app'
 ],
 function(Ember, $, appTemplate) {
-  console.log('example spec');
   describe("Example Spec", function() {
     it("should be able to access Ember", function() {
       expect(Ember).toBeDefined();
