@@ -1,5 +1,7 @@
-ember-amd-starter
+Ember AMD Starter
 =================
+
+An example project from which you can start developing your Ember AMD app.
 
 ✓ jQuery  
 ✓ Bootstrap  
