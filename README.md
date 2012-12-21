@@ -12,7 +12,7 @@ An example project from which you can start developing your Ember AMD app.
 ✓ Jasmine  
   
     # cd ember-amd-starter
-    # grunt
+    # node_modules/.bin/grunt
     # cd public-build
     # python -m SimpleHTTPServer 8000
     # (=^_^=)  
