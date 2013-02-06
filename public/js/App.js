@@ -29,13 +29,12 @@ requirejs.config({
 requirejs([
   'ember',
   'bootstrap',
-  'ApplicationController',
   'ApplicationView',
   'IndexController',
   'IndexView',
   'IndexRoute'
 ],
-function(Ember, Bootstrap, ApplicationController, ApplicationView, IndexController, IndexView, IndexRoute) {
+function(Ember, Bootstrap, ApplicationView, IndexController, IndexView, IndexRoute) {
   //Need to leak the Application to global scope so that global paths will work (e.g. 'App.router.indexController')
   var App = window.App = Ember.Application.create({
     ApplicationView: ApplicationView,
