@@ -1,9 +1,10 @@
 define([
   'jquery',
-  'ember'
+  'ember',
+  'Route'
 ],
-function($, Ember) {
-  var IndexRoute = Ember.Route.extend({
+function($, Ember, Route) {
+  var IndexRoute = Route.extend({
     setupController: function(controller) {
       controller.set('title', 'Herro');
       //you can replace this simplistic method of data procurement with your own fancy system (e.g. ember-data)

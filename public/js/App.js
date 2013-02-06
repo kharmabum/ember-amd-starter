@@ -32,20 +32,28 @@ requirejs([
   'ApplicationView',
   'IndexController',
   'IndexView',
-  'IndexRoute'
+  'IndexRoute',
+  'OtherView',
+  'OtherRoute',
+  'NavView'
 ],
-function(Ember, Bootstrap, ApplicationView, IndexController, IndexView, IndexRoute) {
-  //Need to leak the Application to global scope so that global paths will work (e.g. 'App.router.indexController')
+function(Ember, Bootstrap, ApplicationView, IndexController, IndexView, IndexRoute, OtherView, OtherRoute, NavView) {
   var App = window.App = Ember.Application.create({
     ApplicationView: ApplicationView,
 
     IndexController: IndexController,
     IndexView: IndexView,
-    IndexRoute: IndexRoute
+    IndexRoute: IndexRoute,
+
+    OtherView: OtherView,
+    OtherRoute: OtherRoute,
+
+    NavView: NavView
   });
 
   App.Router.map(function() {
     this.route('index');
+    this.route('other');
   });
 
   return App;
