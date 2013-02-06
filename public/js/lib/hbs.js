@@ -81,7 +81,7 @@ define(function() {
     }
 
     try {
-      var ext = config.templateExtension || 'hbs';
+      var ext = config.hbs.templateExtension || 'hbs';
       var path = name + '.' + ext;
       if (config.hbs.baseDir)
         path = config.hbs.baseDir + '/' + path;

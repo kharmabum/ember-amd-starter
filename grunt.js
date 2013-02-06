@@ -23,7 +23,6 @@ module.exports = function(grunt) {
       baseUrl: "js/",
       dir: "public-build",
       optimizeCss: "standard",
-      optimize: "none",
       inlineText: true,
       removeCombined: true,
       keepBuildDir: true,
@@ -53,7 +52,8 @@ module.exports = function(grunt) {
       },
 
       hbs: {
-        templateExtension: 'hbs'
+        templateExtension: 'hbs',
+        baseDir: 'template'
       },
 
       locale: "en_us",
