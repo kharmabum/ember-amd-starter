@@ -21,28 +21,33 @@ requirejs.config({
     }
   },
   hbs: {
-    templateExtension: 'hbs'
+    templateExtension: 'hbs',
+    baseDir: 'template'
   }
 });
 
 requirejs([
   'ember',
   'bootstrap',
-  'Router',
   'ApplicationController',
   'ApplicationView',
   'IndexController',
-  'IndexView'
+  'IndexView',
+  'IndexRoute'
 ],
-function(Ember, Bootstrap, Router, ApplicationController, ApplicationView, IndexController, IndexView) {
+function(Ember, Bootstrap, ApplicationController, ApplicationView, IndexController, IndexView, IndexRoute) {
+  //Need to leak the Application to global scope so that global paths will work (e.g. 'App.router.indexController')
   var App = window.App = Ember.Application.create({
-    ApplicationController: ApplicationController,
     ApplicationView: ApplicationView,
 
     IndexController: IndexController,
     IndexView: IndexView,
-
-    Router: Router
+    IndexRoute: IndexRoute
   });
+
+  App.Router.map(function() {
+    this.route('index');
+  });
+
   return App;
 });

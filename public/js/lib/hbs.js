@@ -83,6 +83,8 @@ define(function() {
     try {
       var ext = config.templateExtension || 'hbs';
       var path = name + '.' + ext;
+      if (config.hbs.baseDir)
+        path = config.hbs.baseDir + '/' + path;
       if (config.isBuild)
         path = require.toUrl(path);
 
@@ -97,6 +99,7 @@ define(function() {
             try {
               template = Ember.Handlebars.compile(text);
               cache[name] = template;
+              Ember.TEMPLATES[name] = template;
               load(template);
             }
             catch (err) {
@@ -113,7 +116,7 @@ define(function() {
 
   tmpl.write = function(pluginName, resourceName, write) {
     if (resourceName in cache) {
-      write("define('" + pluginName + "!" + resourceName + "', ['ember'], function(Ember) { return Ember.Handlebars.compile('" + jsEscape(cache[resourceName]) + "'); });\n");
+      write("define('" + pluginName + "!" + resourceName + "', ['ember'], function(Ember) { var template = Ember.Handlebars.compile('" + jsEscape(cache[resourceName]) + "'); Ember.TEMPLATES['" + resourceName + "'] = template; return template; });\n");
     }
   };
 

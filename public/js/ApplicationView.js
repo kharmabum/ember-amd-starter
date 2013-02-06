@@ -1,10 +1,10 @@
 define([
   'ember',
-  'hbs!template/app'
+  'hbs!application'
 ],
 function(Ember, appTemplate) {
   var ApplicationView = Ember.View.extend({
-    template: appTemplate
+    templateName: 'application'
   });
   return ApplicationView;
 });

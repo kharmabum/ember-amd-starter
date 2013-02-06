@@ -1,8 +1,16 @@
-<div class="row">
-  <div class="span9">This is some content.</div>
-
-  <div class="span3">
-    <div>This is a collection of json data</div>
-    {{view view.listView}}
+<header>
+  <h1>{{title}}</h1>
+</header>
+<article>
+  <div class="row">
+    <section>
+      <div class="span9">This is some content.</div>
+    </section>
+    <section>
+      <div class="span3">
+        <div>This is a collection of json data</div>
+        {{view view.listView contentBinding="controller.listItems"}}
+      </div>
+    </section>
   </div>
-</div>
+</article>
