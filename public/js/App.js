@@ -1,3 +1,4 @@
+//TODO make some content which explains how the app works, run the app itself on github pages
 requirejs.config({
   paths: {
     'ember': 'lib/ember',

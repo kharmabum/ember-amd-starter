@@ -1,4 +1,4 @@
 <ul class="nav nav-list">
-  <li>{{#linkTo "index"}}Home{{/linkTo}}</li>
-  <li>{{#linkTo "other"}}Other Page{{/linkTo}}</li>
+  {{#linkTo "index" tagName="li" href=false}}<a {{bindAttr href="view.href"}}>Home</a>{{/linkTo}}
+  {{#linkTo "other" tagName="li" href=false}}<a {{bindAttr href="view.href"}}>Other</a>{{/linkTo}}
 </ul>
