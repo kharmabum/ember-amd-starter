@@ -1,15 +1,14 @@
 define([
   'ember',
-  'hbs!template/index',
-  'hbs!template/listItem'
+  'hbs!index',
+  'hbs!listItem'
 ],
 function(Ember, indexTemplate, listItemTemplate) {
   var IndexView = Ember.View.extend({
-    template: indexTemplate,
+    templateName: 'index',
     listView: Ember.CollectionView.extend({
-      contentBinding: 'App.router.indexController',
       itemViewClass: Ember.View.extend({
-        template: listItemTemplate
+        templateName: 'listItem'
       })
     })
   });

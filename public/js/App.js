@@ -1,3 +1,4 @@
+//TODO make some content which explains how the app works, run the app itself on github pages
 requirejs.config({
   paths: {
     'ember': 'lib/ember',
@@ -21,28 +22,40 @@ requirejs.config({
     }
   },
   hbs: {
-    templateExtension: 'hbs'
+    templateExtension: 'hbs',
+    baseDir: 'template'
   }
 });
 
 requirejs([
   'ember',
   'bootstrap',
-  'Router',
-  'ApplicationController',
   'ApplicationView',
   'IndexController',
-  'IndexView'
+  'IndexView',
+  'IndexRoute',
+  'OtherView',
+  'OtherRoute',
+  'NavView'
 ],
-function(Ember, Bootstrap, Router, ApplicationController, ApplicationView, IndexController, IndexView) {
+function(Ember, Bootstrap, ApplicationView, IndexController, IndexView, IndexRoute, OtherView, OtherRoute, NavView) {
   var App = window.App = Ember.Application.create({
-    ApplicationController: ApplicationController,
     ApplicationView: ApplicationView,
 
     IndexController: IndexController,
     IndexView: IndexView,
+    IndexRoute: IndexRoute,
 
-    Router: Router
+    OtherView: OtherView,
+    OtherRoute: OtherRoute,
+
+    NavView: NavView
   });
+
+  App.Router.map(function() {
+    this.route('index');
+    this.route('other');
+  });
+
   return App;
 });
