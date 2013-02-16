@@ -34,11 +34,10 @@ requirejs([
   'IndexController',
   'IndexView',
   'IndexRoute',
-  'OtherView',
-  'OtherRoute',
-  'NavView'
+  'TrickyBitsView',
+  'TrickyBitsRoute'
 ],
-function(Ember, Bootstrap, ApplicationView, IndexController, IndexView, IndexRoute, OtherView, OtherRoute, NavView) {
+function(Ember, Bootstrap, ApplicationView, IndexController, IndexView, IndexRoute, TrickyBitsView, TrickyBitsRoute) {
   var App = window.App = Ember.Application.create({
     ApplicationView: ApplicationView,
 
@@ -46,15 +45,13 @@ function(Ember, Bootstrap, ApplicationView, IndexController, IndexView, IndexRou
     IndexView: IndexView,
     IndexRoute: IndexRoute,
 
-    OtherView: OtherView,
-    OtherRoute: OtherRoute,
-
-    NavView: NavView
+    TrickyBitsView: TrickyBitsView,
+    TrickyBitsRoute: TrickyBitsRoute
   });
 
   App.Router.map(function() {
     this.route('index');
-    this.route('other');
+    this.route('tricky_bits');
   });
 
   return App;
