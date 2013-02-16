@@ -1,0 +1,1 @@
+define(["ember"],function(e){var t=e.Router.extend({root:e.Route.extend({index:e.Route.extend({route:"/",connectOutlets:function(e,t){e.get("applicationController").connectOutlet("index")}})})});return t})

@@ -1,0 +1,35 @@
+<section>
+  <h3>An Example Ember AMD Setup</h3>
+
+  <p>This site is the running on the <a href="http://github.com/b3nj4m/ember-amd-starter">ember-amd-starter</a> code. Using the AMD pattern makes it easy to split-up your components into separate files and to be explicit about your dependencies. <a href="http://requirejs.org">Requirejs</a> is then used to build the app into a single minified javascript file.</p>
+
+  <p><a href="http://emberjs.com">Ember.js</a> was not designed to work in an AMD environment out-of-the-box. Thus I've created this example project to help you with some of the {{#linkTo "tricky_bits"}}tricky bits{{/linkTo}}.</p>
+
+  <h3>Building with Grunt</h3>
+
+<div class="highlight"><pre><span class="nv"><span class="o">$</span> </span><span class="nb">cd </span>ember-amd-starter
+<span class="nv"><span class="o">$</span> </span>node_modules/.bin/grunt
+Running <span class="s2">&quot;lint:all&quot;</span> (lint) task
+Lint free.
+
+Running <span class="s2">&quot;requirejs&quot;</span> task
+<span class="k">&gt;&gt;</span> RequireJS optimizer started
+<span class="k">&gt;&gt;</span> RequireJS optimizer finished
+Compressed size for module <span class="s2">&quot;App&quot;</span>: 104168 bytes gzipped (352273 bytes minified).
+
+Running <span class="s2">&quot;jasmine&quot;</span> task
+Testing jasmine specs via phantom
+4 specs, 0 failures in 0.01s.
+
+<span class="k">Done, without errors.</span>
+</pre></div>
+
+  <h3>Testing the Build Code</h3>
+
+<div class="highlight"><pre><span class="nv"><span class="o">$</span> </span><span class="nb">cd </span>ember-amd-starter/public-build
+<span class="nv"><span class="o">$</span> </span>python -m SimpleHTTPServer 8000
+</pre></div>
+
+  <p>Open a browser to <a href="http://localhost:8000">http://localhost:8000</a>, and you should see a site just like this one.</p>
+
+</section>
