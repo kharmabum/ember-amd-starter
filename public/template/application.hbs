@@ -1,12 +1,20 @@
-<header>
-  <div class="hero-unit">
-    <h1>Ember AMD</h1>
-    <p>Don't tell Tom Dale.</p>
-  </div>
-</header>
-<div class="container-fluid">
-  <div class="row-fluid">
-    <div class="span2"><nav>{{outlet nav}}</nav></div>
-    <div class="span10"><article>{{outlet}}</article></span>
-  </div>
+<div class="wrapper">
+  <header class="without-description">
+    <h1>{{title}}</h1>
+    <p></p>
+    <p class="view"><a href="https://github.com/b3nj4m/ember-amd-starter">View the Project on GitHub <small>b3nj4m/ember-amd-starter</small></a></p>
+    <ul>
+      <li><a href="https://github.com/b3nj4m/ember-amd-starter/archive/v0.2.1.zip">Download <strong>ZIP File</strong></a></li>
+      <li><a href="https://github.com/b3nj4m/ember-amd-starter/archive/v0.2.1.tar.gz">Download <strong>TAR Ball</strong></a></li>
+      <li><a href="https://github.com/b3nj4m/ember-amd-starter">View On <strong>GitHub</strong></a></li>
+    </ul>
+  </header>
+  <article>
+    {{outlet}}
+  </article>
 </div>
+<footer>
+  <p>Project maintained by <a href="https://github.com/b3nj4m">b3nj4m</a></p>
+  <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+</footer>
+<!--[if !IE]><script>fixScale(document);</script><![endif]-->

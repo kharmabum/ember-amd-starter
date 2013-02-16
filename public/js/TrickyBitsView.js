@@ -1,10 +1,10 @@
 define([
   'ember',
-  'hbs!other'
+  'hbs!tricky_bits'
 ],
-function(Ember, otherTemplate) {
+function(Ember) {
   var OtherView = Ember.View.extend({
-    templateName: 'other'
+    templateName: 'tricky_bits'
   });
   return OtherView;
 });

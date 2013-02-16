@@ -1,0 +1,19 @@
+<section>
+  <h3>Tricky Bit #1: Handlebars</h3>
+  <p>If you're like me, you really dislike having a butt-load of templates defined in your index.html file. When your app scales beyond To-Dos, it starts to get really annoying. Fortunately, you can define your templates in separate files, and use the supplied <code>hbs</code> plugin for <code>requirejs</code>. Here's an example usage from the <code>TrickyBitsView.js</code> file used on this page:</p>
+
+<div class="highlight"><pre><span class="nx">define</span><span class="p">([</span>
+  <span class="s1">&#39;ember&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;hbs!tricky_bits&#39;</span>
+<span class="p">],</span>
+<span class="kd">function</span><span class="p">(</span><span class="nx">Ember</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">OtherView</span> <span class="o">=</span> <span class="nx">Ember</span><span class="p">.</span><span class="nx">View</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+    <span class="nx">templateName</span><span class="o">:</span> <span class="s1">&#39;tricky_bits&#39;</span>
+  <span class="p">});</span>
+  <span class="k">return</span> <span class="nx">OtherView</span><span class="p">;</span>
+<span class="p">});</span>
+</pre></div>
+
+  <p>Behind the scenes, the <code>hbs</code> plugin fetches your template file, compiles it with <code>Ember.Handlebars</code> and adds a reference to the compiled template to <code>Ember.TEMPLATES</code>. Instances of <code>Ember.View</code> can then look up your compiled template by filename using the <code>templateName</code> property.</p>
+
+</section>
