@@ -1,3 +1,15 @@
+body {
+  font-size: 16px;
+}
+h3 {
+  font-size: 26px;
+}
+.nav li {
+  cursor: pointer;
+}
+.nav li.active {
+  cursor: auto;
+}
 article h3:nth-of-type(1) {
   margin-top: 0;
   line-height: 24px;
