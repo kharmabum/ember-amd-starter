@@ -1,5 +1,5 @@
 define([
-  'ember',
+  'ember'
 ],
 function(Ember) {
   var TrickyBitsRoute = Ember.Route.extend({
