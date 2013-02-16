@@ -2,7 +2,7 @@ define([
   'ember',
   'hbs!application'
 ],
-function(Ember, appTemplate) {
+function(Ember) {
   var ApplicationView = Ember.View.extend({
     templateName: 'application'
   });
