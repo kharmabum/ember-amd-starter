@@ -3,8 +3,8 @@ define([
   'hbs!tricky_bits'
 ],
 function(Ember) {
-  var OtherView = Ember.View.extend({
+  var TrickyBitsView = Ember.View.extend({
     templateName: 'tricky_bits'
   });
-  return OtherView;
+  return TrickyBitsView;
 });
