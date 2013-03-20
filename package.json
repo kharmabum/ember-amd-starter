@@ -1,0 +1,33 @@
+{
+  "name": "ember-amd-starter",
+  "version": "0.2.3",
+  "description": "Ember AMD boilerplate code",
+  "main": "grunt.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "fs": "~0.0.0"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-jasmine": "~0.4.1",
+    "grunt-contrib-requirejs": "~0.4.0",
+    "grunt-template-jasmine-requirejs": "~0.1.0",
+    "grunt-contrib-jshint": "~0.3.0"
+  },
+  "scripts": {
+    "test": "grunt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/b3nj4m/ember-amd-starter"
+  },
+  "keywords": [
+    "ember",
+    "requirejs"
+  ],
+  "author": "Ben Robbins",
+  "license": "MIT",
+  "readmeFilename": "README.md"
+}
