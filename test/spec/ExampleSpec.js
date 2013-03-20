@@ -5,7 +5,7 @@ define([
   'hbs!application'
 ],
 function(Ember, $, IndexView, applicationTemplate) {
-  describe("hbs!", function() {
+  describe("templates", function() {
     it("should be able to fetch and compile templates", function() {
       expect(applicationTemplate).toBeDefined();
       expect(typeof applicationTemplate).toEqual('function');
