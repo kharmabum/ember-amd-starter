@@ -1,6 +1,9 @@
 module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    jshint: {
+      files: ['Gruntfile.js', 'public/js/*.js', 'test/spec/*.js']
+    },
     requirejs: {
       compile: {
         options: {
@@ -48,29 +51,6 @@ module.exports = function(grunt) {
         }
       }
     },
-    /*
-    handlebars: {
-      compile: {
-        options: {
-          amd: true,
-          namespace: 'Ember.TEMPLATES',
-          processName: function(filename) {
-            //chop-off leading directory info as well as .hbs extension
-            var idx = filename.lastIndexOf('/');
-            idx = idx === -1 ? 0 : idx + 1;
-            return filename.substr(idx, filename.length - idx - 4);
-          }
-        },
-        files: [{
-          expand: true,
-          cwd: 'public/template/',
-          src: ['*.hbs'],
-          dest: 'public/template/compiled/',
-          ext: '.js'
-        }]
-      }
-    },
-    */
     jasmine: {
       src: [
         'public-build/js/App.js'
@@ -83,8 +63,8 @@ module.exports = function(grunt) {
   });
 
   grunt.loadNpmTasks('grunt-contrib-requirejs');
-  //grunt.loadNpmTasks('grunt-contrib-handlebars');
   grunt.loadNpmTasks('grunt-contrib-jasmine');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
   
-  grunt.registerTask('default', ['requirejs', 'jasmine']);
+  grunt.registerTask('default', ['jshint', 'requirejs', 'jasmine']);
 };
