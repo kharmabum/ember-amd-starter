@@ -1,6 +1,6 @@
 <section>
   <h3>Tricky Bit #1: Handlebars</h3>
-  <p>If you're like me, you really dislike having a butt-load of templates defined in your index.html file. When your app scales beyond To-Dos, it starts to get really annoying. Fortunately, you can define your templates in separate files, and use the supplied <code>hbs</code> plugin for <code>requirejs</code>. Here's an example usage from the <code>TrickyBitsView.js</code> file used on this page:</p>
+  <p>If you're like me, you really dislike having a butt-load of templates defined in your index.html file. When your app scales beyond To-Dos, it starts to get really annoying. Fortunately, you can define your templates in separate files, and use the supplied <code>hbs</code> plugin for <code>require.js</code>. Here's an example usage from the <code>TrickyBitsView.js</code> file used on this page:</p>
 
 <div class="highlight"><pre><span class="nx">define</span><span class="p">([</span>
   <span class="s1">&#39;ember&#39;</span><span class="p">,</span>
@@ -16,7 +16,15 @@
 
   <p>Behind the scenes, the <code>hbs</code> plugin fetches your template file, compiles it with <code>Ember.Handlebars</code> and adds a reference to the compiled template to <code>Ember.TEMPLATES</code>. Instances of <code>Ember.View</code> can then look up your compiled template by filename using the <code>templateName</code> property.</p>
 
-  <h3>Tricky Bit #2: Grunt and Jasmine</h3>
+  <h3>Tricky Bit #2: Require.js</h3>
+
+  <p>Getting <code>require.js</code> configuration right can be tricky. I structure my projects such that there is a development version (in <code>public/</code>) and a production version (in <code>public-build/</code>).</p>
+  
+  <p>The development version can be run without building first. It will be slower to load, because the browser will have to make a separate request for each Javascript file in your project, and the files will not be minified. The production version is optimized by the <code>require.js</code> optimizer, resulting in a single Javascript file containing all your necessary code.</p>
+  
+  <p>I've provided both production (in <code>Gruntfile.js</code>) and development (in <code>App.js</code>) configurations for <code>require.js</code> which allow you to build your project into a single-file, minified app for production, but also to develop rapidly without running the build process.</p>
+
+  <h3>Tricky Bit #3: Jasmine</h3>
   
   <p>As of version <code>0.3.0</code>, <code>grunt-jasmine-runner</code> has been dropped in favor of <a target="_blank" href="https://github.com/gruntjs/grunt-contrib-jasmine">grunt-contrib-jasmine</a> and <a target="_blank" href="https://github.com/jsoverson/grunt-template-jasmine-requirejs">grunt-template-jasmine-requirejs</a> which has built-in support for <code>require.js</code> apps. Yay. Now all we need is a little bit of config in our <code>Gruntfile</code>:</p>
 <div class="highlight"><pre><span class="nx">jasmine</span><span class="o">:</span> <span class="p">{</span>
